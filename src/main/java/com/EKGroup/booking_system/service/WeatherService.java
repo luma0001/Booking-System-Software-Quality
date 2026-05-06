@@ -28,7 +28,7 @@ public class WeatherService {
         Activity activity = activityRepository.findById(activityId)
                 .filter(Activity::isActive)
                 .orElseThrow(() -> new NotFoundException("Activity not found: " + activityId));
-        WeatherSnapshot weather = weatherClient.getWeather(activity, date, time);
+        WeatherSnapshot weather = weatherClient.getWeather(date, time);
         boolean allowed = isAllowed(activity.getWeatherRuleType(), activity.getWeatherThreshold(), weather);
         String reason = allowed
                 ? "Weather conditions satisfy activity rule."
