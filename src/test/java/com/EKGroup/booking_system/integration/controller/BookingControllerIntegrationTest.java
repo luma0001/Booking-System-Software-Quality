@@ -23,6 +23,7 @@ import java.util.UUID;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -89,5 +90,49 @@ class BookingControllerIntegrationTest {
                 .andExpect(status().isNotFound())
                 .andExpect(jsonPath("$.title", is("Resource not found")))
                 .andExpect(jsonPath("$.detail", is("Booking not found.")));
+    }
+
+    @Test
+    void TC_INT_CTRL_003_createBooking_invalidPayload_returnsBadRequestProblemDetail() throws Exception {
+        mockMvc.perform(post("/api/bookings")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {
+                                  "activityId": 1,
+                                  "customerName": "",
+                                  "customerEmail": "not-an-email",
+                                  "bookingDate": "2026-05-07",
+                                  "bookingTime": "10:00"
+                                }
+                                """))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.title", is("Invalid request payload")))
+                .andExpect(jsonPath("$.detail", is("One or more fields are invalid. Check request body.")));
+    }
+
+    @Test
+    void TC_INT_CTRL_004_cancelBooking_returnsCancelledResponse() throws Exception {
+        UUID bookingId = UUID.fromString("33333333-3333-3333-3333-333333333333");
+        BookingResponse cancelled = new BookingResponse(
+                bookingId,
+                1L,
+                "Quidditch Training",
+                "Harry Potter",
+                "harry@hogwarts.edu",
+                LocalDate.of(2026, 5, 7),
+                LocalTime.of(10, 0),
+                BookingStatus.CANCELLED,
+                LocalDateTime.of(2026, 5, 6, 12, 0),
+                LocalDateTime.of(2026, 5, 6, 13, 0)
+        );
+
+        Mockito.when(bookingService.cancelBooking(eq(bookingId)))
+                .thenReturn(cancelled);
+
+        mockMvc.perform(delete("/api/bookings/{bookingId}", bookingId))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id", is("33333333-3333-3333-3333-333333333333")))
+                .andExpect(jsonPath("$.status", is("CANCELLED")))
+                .andExpect(jsonPath("$.cancelledAt", is("2026-05-06T13:00:00")));
     }
 }

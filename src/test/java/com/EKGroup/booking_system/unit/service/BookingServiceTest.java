@@ -1,5 +1,27 @@
 package com.EKGroup.booking_system.unit.service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.Optional;
+import java.util.UUID;
+
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentCaptor;
+import static org.mockito.ArgumentMatchers.any;
+import org.mockito.Mock;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoInteractions;
+import static org.mockito.Mockito.when;
+import org.mockito.junit.jupiter.MockitoExtension;
+
 import com.EKGroup.booking_system.dto.BookingResponse;
 import com.EKGroup.booking_system.dto.CreateBookingRequest;
 import com.EKGroup.booking_system.dto.WeatherAvailabilityResponse;
@@ -14,21 +36,6 @@ import com.EKGroup.booking_system.repository.BookingRepository;
 import com.EKGroup.booking_system.service.BookingService;
 import com.EKGroup.booking_system.service.WeatherService;
 import com.EKGroup.booking_system.validation.BookingValidator;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.Optional;
-import java.util.UUID;
-
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class BookingServiceTest {
@@ -360,6 +367,43 @@ class BookingServiceTest {
 
         assertThrows(
                 NotFoundException.class,
+                () -> bookingService.cancelBooking(bookingId)
+        );
+
+        verify(bookingRepository, never()).save(any());
+    }
+
+    @Test
+    void TC_BKG_009_cancelBookingAfterStartTime_throwsValidationException() {
+        UUID bookingId = UUID.randomUUID();
+        Booking booking = activeFutureBooking();
+        booking.setBookingDate(LocalDate.now().minusDays(1));
+        booking.setBookingTime(LocalTime.of(10, 0));
+
+        when(bookingRepository.findById(bookingId))
+                .thenReturn(Optional.of(booking));
+
+        assertThrows(
+                ValidationException.class,
+                () -> bookingService.cancelBooking(bookingId)
+        );
+
+        verify(bookingRepository, never()).save(any());
+    }
+
+    @Test
+    void TC_BKG_010_cancelBookingExactlyAtStartTime_throwsValidationException() {
+        UUID bookingId = UUID.randomUUID();
+        Booking booking = activeFutureBooking();
+        LocalDateTime now = LocalDateTime.now();
+        booking.setBookingDate(now.toLocalDate());
+        booking.setBookingTime(now.toLocalTime());
+
+        when(bookingRepository.findById(bookingId))
+                .thenReturn(Optional.of(booking));
+
+        assertThrows(
+                ValidationException.class,
                 () -> bookingService.cancelBooking(bookingId)
         );
 
