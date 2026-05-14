@@ -1,0 +1,26 @@
+{
+  "name": "booking-system-software-quality",
+  "version": "1.0.0",
+  "description": "1. setup .env  2. cd .\\database\\ 3. docker compose -f docker-compose.psql.yml up -d 4. mvn spring-boot:run or .\\mvnw.cmd spring-boot:run",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test tests/api",
+    "test:api": "playwright test tests/api",
+    "test:api:report": "playwright show-report"
+  },  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KEAArimaaProject/Booking-System-Software-Quality.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/KEAArimaaProject/Booking-System-Software-Quality/issues"
+  },
+  "homepage": "https://github.com/KEAArimaaProject/Booking-System-Software-Quality#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.7.0"
+  }
+}
