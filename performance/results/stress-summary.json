@@ -1,0 +1,206 @@
+{
+    "root_group": {
+        "checks": {},
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {
+                "GET /api/activities": {
+                    "name": "GET /api/activities",
+                    "path": "::GET /api/activities",
+                    "id": "d73c17b3ef88fd23fa2e463165eae997",
+                    "groups": {},
+                    "checks": {
+                            "activities status is 200": {
+                                "path": "::GET /api/activities::activities status is 200",
+                                "id": "e86ba4a6a175d0ab69e45bdd432d17e3",
+                                "passes": 1913,
+                                "fails": 0,
+                                "name": "activities status is 200"
+                            },
+                            "activities response is JSON array": {
+                                "name": "activities response is JSON array",
+                                "path": "::GET /api/activities::activities response is JSON array",
+                                "id": "68d07d2f17b2ff96b15436bcdf6bff70",
+                                "passes": 1913,
+                                "fails": 0
+                            },
+                            "activities response time below 1000ms": {
+                                "path": "::GET /api/activities::activities response time below 1000ms",
+                                "id": "11129a6c5a4f54723e096b7a897890a4",
+                                "passes": 1913,
+                                "fails": 0,
+                                "name": "activities response time below 1000ms"
+                            }
+                        }
+                },
+                "GET /api/activities/{activityId}/slots": {
+                    "id": "de250d67cf85c9a89e005ec5edef7be9",
+                    "groups": {},
+                    "checks": {
+                            "slots status is 200": {
+                                "name": "slots status is 200",
+                                "path": "::GET /api/activities/{activityId}/slots::slots status is 200",
+                                "id": "30a8db4cc59cfa389cf17be2e754eefe",
+                                "passes": 1913,
+                                "fails": 0
+                            },
+                            "slots response has activityId": {
+                                "passes": 1913,
+                                "fails": 0,
+                                "name": "slots response has activityId",
+                                "path": "::GET /api/activities/{activityId}/slots::slots response has activityId",
+                                "id": "2bd2248b61f07f5753d9410d8bc48843"
+                            },
+                            "slots response has availableSlots": {
+                                "name": "slots response has availableSlots",
+                                "path": "::GET /api/activities/{activityId}/slots::slots response has availableSlots",
+                                "id": "58f738275809f2a394c98715d1b1dd0f",
+                                "passes": 1913,
+                                "fails": 0
+                            },
+                            "slots response time below 1000ms": {
+                                "name": "slots response time below 1000ms",
+                                "path": "::GET /api/activities/{activityId}/slots::slots response time below 1000ms",
+                                "id": "42a32fe308bc75f69600a2298edf97fc",
+                                "passes": 1913,
+                                "fails": 0
+                            }
+                        },
+                    "name": "GET /api/activities/{activityId}/slots",
+                    "path": "::GET /api/activities/{activityId}/slots"
+                }
+            }
+    },
+    "metrics": {
+        "iterations": {
+            "count": 1913,
+            "rate": 12.697034428735632
+        },
+        "checks": {
+            "passes": 13391,
+            "fails": 0,
+            "thresholds": {
+                "rate>0.90": false
+            },
+            "value": 1
+        },
+        "http_req_receiving": {
+            "avg": 0.07563940423308087,
+            "min": 0.013,
+            "med": 0.071,
+            "max": 1.877,
+            "p(90)": 0.105,
+            "p(95)": 0.11869999999999982
+        },
+        "http_req_duration": {
+            "avg": 4.4014860203815,
+            "min": 1.076,
+            "med": 4.217,
+            "max": 21.483,
+            "p(90)": 5.9924,
+            "p(95)": 6.538799999999999,
+            "thresholds": {
+                "p(95)<1500": false
+            }
+        },
+        "http_req_blocked": {
+            "med": 0.008,
+            "max": 3.3,
+            "p(90)": 0.013,
+            "p(95)": 0.014,
+            "avg": 0.018961066109224146,
+            "min": 0.001
+        },
+        "http_req_tls_handshaking": {
+            "p(95)": 0,
+            "avg": 0,
+            "min": 0,
+            "med": 0,
+            "max": 0,
+            "p(90)": 0
+        },
+        "vus_max": {
+            "value": 30,
+            "min": 30,
+            "max": 30
+        },
+        "vus": {
+            "value": 1,
+            "min": 1,
+            "max": 30
+        },
+        "http_reqs": {
+            "count": 3827,
+            "rate": 25.40070609449622
+        },
+        "http_req_duration{expected_response:true}": {
+            "p(95)": 6.538799999999999,
+            "avg": 4.4014860203815,
+            "min": 1.076,
+            "med": 4.217,
+            "max": 21.483,
+            "p(90)": 5.9924
+        },
+        "http_req_failed": {
+            "passes": 0,
+            "fails": 3827,
+            "thresholds": {
+                "rate<0.05": false
+            },
+            "value": 0
+        },
+        "data_received": {
+            "count": 873023,
+            "rate": 5794.460579235791
+        },
+        "group_duration": {
+            "avg": 4.681550911657085,
+            "min": 1.189916,
+            "med": 4.5259375,
+            "max": 21.598,
+            "p(90)": 6.2839375,
+            "p(95)": 6.84433325
+        },
+        "iteration_duration": {
+            "avg": 1010.347917533194,
+            "min": 1003.395208,
+            "med": 1010.273042,
+            "max": 1027.58125,
+            "p(90)": 1012.1792336,
+            "p(95)": 1013.3715334
+        },
+        "http_req_waiting": {
+            "max": 21.421,
+            "p(90)": 5.8888,
+            "p(95)": 6.423999999999998,
+            "avg": 4.295215050953735,
+            "min": 0.918,
+            "med": 4.103
+        },
+        "http_req_connecting": {
+            "avg": 0.006791481578259735,
+            "min": 0,
+            "med": 0,
+            "max": 0.574,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "http_req_sending": {
+            "avg": 0.030631565194669887,
+            "min": 0.005,
+            "med": 0.028,
+            "max": 0.389,
+            "p(90)": 0.043,
+            "p(95)": 0.048
+        },
+        "data_sent": {
+            "count": 367380,
+            "rate": 2438.3881382273375
+        }
+    },
+    "setup_data": {
+        "date": "2026-05-20",
+        "activityId": 7
+    }
+}
