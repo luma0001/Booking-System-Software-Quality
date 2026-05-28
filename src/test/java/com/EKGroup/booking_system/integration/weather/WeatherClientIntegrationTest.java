@@ -6,13 +6,16 @@ import java.time.LocalTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.client.MockRestServiceServer;
+
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withServerError;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
+
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestClientResponseException;
 
@@ -38,18 +41,18 @@ class WeatherClientIntegrationTest {
     void getWeather_mapsApiResponseToWeatherSnapshot() {
         mockServer.expect(requestTo("https://weather.example/current.json?key=test-api-key&q=London"))
                 .andRespond(withSuccess("""
-                    {
-                      "location": {
-                        "localtime_epoch": 1710000000
-                      },
-                      "current": {
-                        "temp_c": 21.2,
-                        "wind_kph": 18.0,
-                        "cloud": 33.3,
-                        "last_updated_epoch": 1710000000
-                      }
-                    }
-                    """, MediaType.APPLICATION_JSON));
+                        {
+                          "location": {
+                            "localtime_epoch": 1710000000
+                          },
+                          "current": {
+                            "temp_c": 21.2,
+                            "wind_kph": 18.0,
+                            "cloud": 33.3,
+                            "last_updated_epoch": 1710000000
+                          }
+                        }
+                        """, MediaType.APPLICATION_JSON));
 
         WeatherSnapshot result = weatherClient.getWeather(LocalDate.now(), LocalTime.NOON);
 
