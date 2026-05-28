@@ -38,13 +38,18 @@ class WeatherClientIntegrationTest {
     void getWeather_mapsApiResponseToWeatherSnapshot() {
         mockServer.expect(requestTo("https://weather.example/current.json?key=test-api-key&q=London"))
                 .andRespond(withSuccess("""
-                        {
-                          "temp_c": 21.2,
-                          "wind_kph": 18.0,
-                          "cloud": 33.3,
-                          "localtime_epoch": 1710000000
-                        }
-                        """, MediaType.APPLICATION_JSON));
+                    {
+                      "location": {
+                        "localtime_epoch": 1710000000
+                      },
+                      "current": {
+                        "temp_c": 21.2,
+                        "wind_kph": 18.0,
+                        "cloud": 33.3,
+                        "last_updated_epoch": 1710000000
+                      }
+                    }
+                    """, MediaType.APPLICATION_JSON));
 
         WeatherSnapshot result = weatherClient.getWeather(LocalDate.now(), LocalTime.NOON);
 
