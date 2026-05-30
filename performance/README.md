@@ -30,3 +30,19 @@ Start the database:
 cd database
 docker compose -f docker-compose.psql.yml up -d
 cd ..
+```
+
+## Git integration.
+performance tests can be added to our git integration by adding these lines:
+``
+      - name: Setup k6
+        uses: grafana/setup-k6-action@ffe7d7290dfa715e48c2ccc924d068444c94bde2 # v1.1.0
+
+      - name: Run k6 performance tests
+        run: |
+          k6 run performance/load-test.js
+          k6 run performance/spike-test.js
+          k6 run performance/stress-test.js
+``
+to this file:
+.github/workflows/continuous-testing.yml

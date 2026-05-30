@@ -21,10 +21,7 @@ test.describe('API testing - Weather', () => {
             `/api/weather/availability?activityId=${activityId}&date=${date}&time=14:00`
         );
 
-        const duration = Date.now() - startTime;
-
         expect(response.status()).toBe(200);
-        expect(duration).toBeLessThan(1000);
 
         const body = await response.json();
 

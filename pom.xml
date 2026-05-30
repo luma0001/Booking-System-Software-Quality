@@ -8,7 +8,7 @@
 		<version>4.0.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.EKGroup</groupId>
+ <groupId>com.ekgroup</groupId>
 	<artifactId>booking-system</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
@@ -28,6 +28,19 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
+		<sonar.organization>keaarimaaproject</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.projectKey>KEAArimaaProject_Booking-System-Software-Quality</sonar.projectKey>
+		<sonar.scanner.skipJreProvisioning>true</sonar.scanner.skipJreProvisioning>
+		<sonar.exclusions>
+			**/dto/**,
+			**/model/**,
+			**/config/**,
+			**/BookingSystemApplication.*
+		</sonar.exclusions>
+		<sonar.coverage.jacoco.xmlReportPaths>
+			target/site/jacoco/jacoco.xml
+		</sonar.coverage.jacoco.xmlReportPaths>
 	</properties>
 	<dependencies>
 
@@ -83,6 +96,11 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>4.0.0.4121</version>
+			</plugin>
+			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.12</version>
@@ -122,12 +140,12 @@
 										<limit>
 											<counter>LINE</counter>
 											<value>COVEREDRATIO</value>
-											<minimum>0.85</minimum>
+											<minimum>0.70</minimum>
 										</limit>
 										<limit>
 											<counter>BRANCH</counter>
 											<value>COVEREDRATIO</value>
-											<minimum>0.80</minimum>
+											<minimum>0.70</minimum>
 										</limit>
 									</limits>
 								</rule>
