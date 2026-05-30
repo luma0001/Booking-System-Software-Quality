@@ -20,6 +20,7 @@ function Write-Status($message, $success) {
 Write-Header "Starting All Project Tests"
 
 $totalTestsFailed = 0
+$failedSuites = @()
 
 # 1. Run Java Tests (Maven)
 Write-Header "Running Java Tests (Maven)"
@@ -30,10 +31,12 @@ if (Test-Path ".\mvnw.cmd") {
     } else {
         Write-Status "Java tests failed" $false
         $totalTestsFailed++
+        $failedSuites += "Java (Maven)"
     }
 } else {
     Write-Status "Maven wrapper (mvnw.cmd) not found" $false
     $totalTestsFailed++
+    $failedSuites += "Java (Maven wrapper missing)"
 }
 
 # 2. Run Playwright API Tests (npm)
@@ -45,6 +48,7 @@ if (Test-Path "package.json") {
     } else {
         Write-Status "Playwright tests failed" $false
         $totalTestsFailed++
+        $failedSuites += "API (Playwright)"
     }
 } else {
     Write-Status "package.json not found, skipping Playwright tests" $false
@@ -79,10 +83,12 @@ if (Get-Command $k6Command -ErrorAction SilentlyContinue) {
             } else {
                 Write-Status "$test failed" $false
                 $totalTestsFailed++
+                $failedSuites += "Performance ($test)"
             }
         } else {
             Write-Status "Performance test file $testPath not found" $false
             $totalTestsFailed++
+            $failedSuites += "Performance ($test file missing)"
         }
     }
 } else {
@@ -95,6 +101,10 @@ if ($totalTestsFailed -eq 0) {
     Write-Host "All test suites passed successfully!" -ForegroundColor Green
     exit 0
 } else {
-    Write-Host "$totalTestsFailed test suite(s) failed. Please check the logs above." -ForegroundColor Red
+    Write-Host "$totalTestsFailed failure(s) detected in the following suites:" -ForegroundColor Red
+    foreach ($suite in $failedSuites) {
+        Write-Host "  - $suite" -ForegroundColor Red
+    }
+    Write-Host "`nPlease check the logs above for more details." -ForegroundColor White
     exit 1
 }
