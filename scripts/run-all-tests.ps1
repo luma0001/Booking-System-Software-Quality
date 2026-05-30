@@ -1,6 +1,8 @@
 
 # PowerShell script to run all tests in the project (Java & Playwright)
 
+# Run all tests from project root: scripts/run-all-tests.ps1
+
 $ErrorActionPreference = "Continue"
 
 function Write-Header($message) {

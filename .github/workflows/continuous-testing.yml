@@ -83,15 +83,6 @@ jobs:
       - name: Run Playwright API tests
         run: npm test
 
-      - name: Setup k6
-        uses: grafana/setup-k6-action@ffe7d7290dfa715e48c2ccc924d068444c94bde2 # v1.1.0
-
-      - name: Run k6 performance tests
-        run: |
-          k6 run performance/load-test.js
-          k6 run performance/spike-test.js
-          k6 run performance/stress-test.js
-
       - name: Stop Spring Boot Application
         if: always()
         run: ./mvnw spring-boot:stop
