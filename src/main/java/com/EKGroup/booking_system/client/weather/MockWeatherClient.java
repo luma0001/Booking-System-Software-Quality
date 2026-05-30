@@ -1,4 +1,4 @@
-package com.EKGroup.booking_system.client.weather;
+package com.ekgroup.booking_system.client.weather;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
-import com.EKGroup.booking_system.model.WeatherSnapshot;
+import com.ekgroup.booking_system.model.WeatherSnapshot;
 
 @Component
 @Profile("test")

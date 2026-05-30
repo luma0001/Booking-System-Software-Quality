@@ -1,9 +1,9 @@
-package com.EKGroup.booking_system.unit.exception;
+package com.ekgroup.booking_system.unit.exception;
 
-import com.EKGroup.booking_system.exception.GlobalExceptionHandler;
-import com.EKGroup.booking_system.exception.NotFoundException;
-import com.EKGroup.booking_system.exception.ValidationException;
-import com.EKGroup.booking_system.exception.WeatherUnavailableException;
+import com.ekgroup.booking_system.exception.GlobalExceptionHandler;
+import com.ekgroup.booking_system.exception.NotFoundException;
+import com.ekgroup.booking_system.exception.ValidationException;
+import com.ekgroup.booking_system.exception.WeatherUnavailableException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;

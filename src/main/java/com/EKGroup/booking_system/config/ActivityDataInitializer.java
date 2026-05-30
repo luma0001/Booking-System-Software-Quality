@@ -1,8 +1,8 @@
-package com.EKGroup.booking_system.config;
+package com.ekgroup.booking_system.config;
 
-import com.EKGroup.booking_system.model.Activity;
-import com.EKGroup.booking_system.model.WeatherRuleType;
-import com.EKGroup.booking_system.repository.ActivityRepository;
+import com.ekgroup.booking_system.model.Activity;
+import com.ekgroup.booking_system.model.WeatherRuleType;
+import com.ekgroup.booking_system.repository.ActivityRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

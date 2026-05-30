@@ -1,4 +1,4 @@
-package com.EKGroup.booking_system.exception;
+package com.ekgroup.booking_system.exception;
 
 public class NotFoundException extends RuntimeException {
     public NotFoundException(String message) {

@@ -1,4 +1,4 @@
-package com.EKGroup.booking_system.client.weather;
+package com.ekgroup.booking_system.client.weather;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -12,10 +12,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestClientException;
 
-import com.EKGroup.booking_system.config.WeatherApiProperties;
-import com.EKGroup.booking_system.dto.WeatherApiResponse;
-import com.EKGroup.booking_system.exception.WeatherUnavailableException;
-import com.EKGroup.booking_system.model.WeatherSnapshot;
+import com.ekgroup.booking_system.config.WeatherApiProperties;
+import com.ekgroup.booking_system.dto.WeatherApiResponse;
+import com.ekgroup.booking_system.exception.WeatherUnavailableException;
+import com.ekgroup.booking_system.model.WeatherSnapshot;
 
 @Component
 @Profile("!test")

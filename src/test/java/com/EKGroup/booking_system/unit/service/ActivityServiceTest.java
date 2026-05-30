@@ -1,15 +1,15 @@
-package com.EKGroup.booking_system.unit.service;
+package com.ekgroup.booking_system.unit.service;
 
-import com.EKGroup.booking_system.dto.ActivityResponse;
-import com.EKGroup.booking_system.dto.TimeSlotResponse;
-import com.EKGroup.booking_system.exception.NotFoundException;
-import com.EKGroup.booking_system.model.Activity;
-import com.EKGroup.booking_system.model.BookingStatus;
-import com.EKGroup.booking_system.model.WeatherRuleType;
-import com.EKGroup.booking_system.repository.ActivityRepository;
-import com.EKGroup.booking_system.repository.BookingRepository;
-import com.EKGroup.booking_system.repository.SlotCountProjection;
-import com.EKGroup.booking_system.service.ActivityService;
+import com.ekgroup.booking_system.dto.ActivityResponse;
+import com.ekgroup.booking_system.dto.TimeSlotResponse;
+import com.ekgroup.booking_system.exception.NotFoundException;
+import com.ekgroup.booking_system.model.Activity;
+import com.ekgroup.booking_system.model.BookingStatus;
+import com.ekgroup.booking_system.model.WeatherRuleType;
+import com.ekgroup.booking_system.repository.ActivityRepository;
+import com.ekgroup.booking_system.repository.BookingRepository;
+import com.ekgroup.booking_system.repository.SlotCountProjection;
+import com.ekgroup.booking_system.service.ActivityService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

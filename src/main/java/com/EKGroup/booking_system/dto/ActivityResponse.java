@@ -1,4 +1,4 @@
-package com.EKGroup.booking_system.dto;
+package com.ekgroup.booking_system.dto;
 
 public record ActivityResponse(
         Long id,

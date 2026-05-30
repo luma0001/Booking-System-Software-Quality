@@ -1,4 +1,4 @@
-package com.EKGroup.booking_system.service;
+package com.ekgroup.booking_system.service;
 
 import java.time.Clock;
 import java.time.LocalDateTime;
@@ -7,16 +7,16 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.EKGroup.booking_system.dto.BookingResponse;
-import com.EKGroup.booking_system.dto.CreateBookingRequest;
-import com.EKGroup.booking_system.exception.NotFoundException;
-import com.EKGroup.booking_system.exception.ValidationException;
-import com.EKGroup.booking_system.model.Activity;
-import com.EKGroup.booking_system.model.Booking;
-import com.EKGroup.booking_system.model.BookingStatus;
-import com.EKGroup.booking_system.repository.ActivityRepository;
-import com.EKGroup.booking_system.repository.BookingRepository;
-import com.EKGroup.booking_system.validation.BookingValidator;
+import com.ekgroup.booking_system.dto.BookingResponse;
+import com.ekgroup.booking_system.dto.CreateBookingRequest;
+import com.ekgroup.booking_system.exception.NotFoundException;
+import com.ekgroup.booking_system.exception.ValidationException;
+import com.ekgroup.booking_system.model.Activity;
+import com.ekgroup.booking_system.model.Booking;
+import com.ekgroup.booking_system.model.BookingStatus;
+import com.ekgroup.booking_system.repository.ActivityRepository;
+import com.ekgroup.booking_system.repository.BookingRepository;
+import com.ekgroup.booking_system.validation.BookingValidator;
 
 @Service
 public class BookingService {

@@ -1,4 +1,4 @@
-package com.EKGroup.booking_system.service;
+package com.ekgroup.booking_system.service;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -8,14 +8,14 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import com.EKGroup.booking_system.dto.ActivityResponse;
-import com.EKGroup.booking_system.dto.TimeSlotResponse;
-import com.EKGroup.booking_system.exception.NotFoundException;
-import com.EKGroup.booking_system.model.Activity;
-import com.EKGroup.booking_system.model.BookingStatus;
-import com.EKGroup.booking_system.repository.ActivityRepository;
-import com.EKGroup.booking_system.repository.BookingRepository;
-import com.EKGroup.booking_system.repository.SlotCountProjection;
+import com.ekgroup.booking_system.dto.ActivityResponse;
+import com.ekgroup.booking_system.dto.TimeSlotResponse;
+import com.ekgroup.booking_system.exception.NotFoundException;
+import com.ekgroup.booking_system.model.Activity;
+import com.ekgroup.booking_system.model.BookingStatus;
+import com.ekgroup.booking_system.repository.ActivityRepository;
+import com.ekgroup.booking_system.repository.BookingRepository;
+import com.ekgroup.booking_system.repository.SlotCountProjection;
 
 @Service
 public class ActivityService {

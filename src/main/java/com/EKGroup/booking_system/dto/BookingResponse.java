@@ -1,6 +1,6 @@
-package com.EKGroup.booking_system.dto;
+package com.ekgroup.booking_system.dto;
 
-import com.EKGroup.booking_system.model.BookingStatus;
+import com.ekgroup.booking_system.model.BookingStatus;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

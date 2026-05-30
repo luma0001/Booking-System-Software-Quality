@@ -1,4 +1,4 @@
-package com.EKGroup.booking_system.controller;
+package com.ekgroup.booking_system.controller;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.EKGroup.booking_system.dto.ActivityResponse;
-import com.EKGroup.booking_system.dto.TimeSlotResponse;
-import com.EKGroup.booking_system.service.ActivityService;
+import com.ekgroup.booking_system.dto.ActivityResponse;
+import com.ekgroup.booking_system.dto.TimeSlotResponse;
+import com.ekgroup.booking_system.service.ActivityService;
 
 @RestController
 @RequestMapping("/api/activities")

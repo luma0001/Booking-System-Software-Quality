@@ -1,8 +1,8 @@
-package com.EKGroup.booking_system.unit.validation;
+package com.ekgroup.booking_system.unit.validation;
 
-import com.EKGroup.booking_system.dto.CreateBookingRequest;
-import com.EKGroup.booking_system.exception.ValidationException;
-import com.EKGroup.booking_system.validation.BookingValidator;
+import com.ekgroup.booking_system.dto.CreateBookingRequest;
+import com.ekgroup.booking_system.exception.ValidationException;
+import com.ekgroup.booking_system.validation.BookingValidator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

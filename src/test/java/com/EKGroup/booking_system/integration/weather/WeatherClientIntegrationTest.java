@@ -1,4 +1,4 @@
-package com.EKGroup.booking_system.integration.weather;
+package com.ekgroup.booking_system.integration.weather;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -19,10 +19,10 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 
 import org.springframework.web.client.RestClient;
 
-import com.EKGroup.booking_system.client.weather.WeatherClientImpl;
-import com.EKGroup.booking_system.config.WeatherApiProperties;
-import com.EKGroup.booking_system.exception.WeatherUnavailableException;
-import com.EKGroup.booking_system.model.WeatherSnapshot;
+import com.ekgroup.booking_system.client.weather.WeatherClientImpl;
+import com.ekgroup.booking_system.config.WeatherApiProperties;
+import com.ekgroup.booking_system.exception.WeatherUnavailableException;
+import com.ekgroup.booking_system.model.WeatherSnapshot;
 
 class WeatherClientIntegrationTest {
 

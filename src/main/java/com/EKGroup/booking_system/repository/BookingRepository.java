@@ -1,4 +1,4 @@
-package com.EKGroup.booking_system.repository;
+package com.ekgroup.booking_system.repository;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -10,9 +10,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.EKGroup.booking_system.model.Activity;
-import com.EKGroup.booking_system.model.Booking;
-import com.EKGroup.booking_system.model.BookingStatus;
+import com.ekgroup.booking_system.model.Activity;
+import com.ekgroup.booking_system.model.Booking;
+import com.ekgroup.booking_system.model.BookingStatus;
 
 
 public interface BookingRepository extends JpaRepository<Booking, UUID> {

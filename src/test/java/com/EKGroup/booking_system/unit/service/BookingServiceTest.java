@@ -1,4 +1,4 @@
-package com.EKGroup.booking_system.unit.service;
+package com.ekgroup.booking_system.unit.service;
 
 import java.time.Clock;
 import java.time.LocalDate;
@@ -24,20 +24,20 @@ import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.EKGroup.booking_system.dto.BookingResponse;
-import com.EKGroup.booking_system.dto.CreateBookingRequest;
-import com.EKGroup.booking_system.dto.WeatherAvailabilityResponse;
-import com.EKGroup.booking_system.exception.NotFoundException;
-import com.EKGroup.booking_system.exception.ValidationException;
-import com.EKGroup.booking_system.model.Activity;
-import com.EKGroup.booking_system.model.Booking;
-import com.EKGroup.booking_system.model.BookingStatus;
-import com.EKGroup.booking_system.model.WeatherRuleType;
-import com.EKGroup.booking_system.repository.ActivityRepository;
-import com.EKGroup.booking_system.repository.BookingRepository;
-import com.EKGroup.booking_system.service.BookingService;
-import com.EKGroup.booking_system.service.WeatherService;
-import com.EKGroup.booking_system.validation.BookingValidator;
+import com.ekgroup.booking_system.dto.BookingResponse;
+import com.ekgroup.booking_system.dto.CreateBookingRequest;
+import com.ekgroup.booking_system.dto.WeatherAvailabilityResponse;
+import com.ekgroup.booking_system.exception.NotFoundException;
+import com.ekgroup.booking_system.exception.ValidationException;
+import com.ekgroup.booking_system.model.Activity;
+import com.ekgroup.booking_system.model.Booking;
+import com.ekgroup.booking_system.model.BookingStatus;
+import com.ekgroup.booking_system.model.WeatherRuleType;
+import com.ekgroup.booking_system.repository.ActivityRepository;
+import com.ekgroup.booking_system.repository.BookingRepository;
+import com.ekgroup.booking_system.service.BookingService;
+import com.ekgroup.booking_system.service.WeatherService;
+import com.ekgroup.booking_system.validation.BookingValidator;
 
 @ExtendWith(MockitoExtension.class)
 class BookingServiceTest {

@@ -1,4 +1,4 @@
-package com.EKGroup.booking_system.repository;
+package com.ekgroup.booking_system.repository;
 
 import java.time.LocalTime;
 

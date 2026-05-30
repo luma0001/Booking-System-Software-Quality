@@ -1,11 +1,11 @@
-package com.EKGroup.booking_system.integration.controller;
+package com.ekgroup.booking_system.integration.controller;
 
-import com.EKGroup.booking_system.controller.BookingController;
-import com.EKGroup.booking_system.dto.BookingResponse;
-import com.EKGroup.booking_system.exception.GlobalExceptionHandler;
-import com.EKGroup.booking_system.exception.NotFoundException;
-import com.EKGroup.booking_system.model.BookingStatus;
-import com.EKGroup.booking_system.service.BookingService;
+import com.ekgroup.booking_system.controller.BookingController;
+import com.ekgroup.booking_system.dto.BookingResponse;
+import com.ekgroup.booking_system.exception.GlobalExceptionHandler;
+import com.ekgroup.booking_system.exception.NotFoundException;
+import com.ekgroup.booking_system.model.BookingStatus;
+import com.ekgroup.booking_system.service.BookingService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;

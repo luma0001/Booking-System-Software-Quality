@@ -1,4 +1,4 @@
-package com.EKGroup.booking_system.config;
+package com.ekgroup.booking_system.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

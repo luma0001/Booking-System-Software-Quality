@@ -1,17 +1,17 @@
-package com.EKGroup.booking_system.service;
+package com.ekgroup.booking_system.service;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 import org.springframework.stereotype.Service;
 
-import com.EKGroup.booking_system.client.weather.WeatherClient;
-import com.EKGroup.booking_system.dto.WeatherAvailabilityResponse;
-import com.EKGroup.booking_system.exception.NotFoundException;
-import com.EKGroup.booking_system.model.Activity;
-import com.EKGroup.booking_system.model.WeatherRuleType;
-import com.EKGroup.booking_system.model.WeatherSnapshot;
-import com.EKGroup.booking_system.repository.ActivityRepository;
+import com.ekgroup.booking_system.client.weather.WeatherClient;
+import com.ekgroup.booking_system.dto.WeatherAvailabilityResponse;
+import com.ekgroup.booking_system.exception.NotFoundException;
+import com.ekgroup.booking_system.model.Activity;
+import com.ekgroup.booking_system.model.WeatherRuleType;
+import com.ekgroup.booking_system.model.WeatherSnapshot;
+import com.ekgroup.booking_system.repository.ActivityRepository;
 
 @Service
 public class WeatherService {

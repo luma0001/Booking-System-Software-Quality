@@ -1,8 +1,8 @@
-package com.EKGroup.booking_system.controller;
+package com.ekgroup.booking_system.controller;
 
-import com.EKGroup.booking_system.dto.BookingResponse;
-import com.EKGroup.booking_system.dto.CreateBookingRequest;
-import com.EKGroup.booking_system.service.BookingService;
+import com.ekgroup.booking_system.dto.BookingResponse;
+import com.ekgroup.booking_system.dto.CreateBookingRequest;
+import com.ekgroup.booking_system.service.BookingService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;

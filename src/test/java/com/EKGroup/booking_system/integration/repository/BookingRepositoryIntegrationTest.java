@@ -1,11 +1,11 @@
-package com.EKGroup.booking_system.integration.repository;
+package com.ekgroup.booking_system.integration.repository;
 
-import com.EKGroup.booking_system.model.Activity;
-import com.EKGroup.booking_system.model.Booking;
-import com.EKGroup.booking_system.model.BookingStatus;
-import com.EKGroup.booking_system.model.WeatherRuleType;
-import com.EKGroup.booking_system.repository.ActivityRepository;
-import com.EKGroup.booking_system.repository.BookingRepository;
+import com.ekgroup.booking_system.model.Activity;
+import com.ekgroup.booking_system.model.Booking;
+import com.ekgroup.booking_system.model.BookingStatus;
+import com.ekgroup.booking_system.model.WeatherRuleType;
+import com.ekgroup.booking_system.repository.ActivityRepository;
+import com.ekgroup.booking_system.repository.BookingRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

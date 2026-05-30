@@ -1,9 +1,9 @@
-package com.EKGroup.booking_system.unit.client;
+package com.ekgroup.booking_system.unit.client;
 
-import com.EKGroup.booking_system.client.weather.WeatherClientImpl;
-import com.EKGroup.booking_system.config.WeatherApiProperties;
-import com.EKGroup.booking_system.exception.WeatherUnavailableException;
-import com.EKGroup.booking_system.model.WeatherSnapshot;
+import com.ekgroup.booking_system.client.weather.WeatherClientImpl;
+import com.ekgroup.booking_system.config.WeatherApiProperties;
+import com.ekgroup.booking_system.exception.WeatherUnavailableException;
+import com.ekgroup.booking_system.model.WeatherSnapshot;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

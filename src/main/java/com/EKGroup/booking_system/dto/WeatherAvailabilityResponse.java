@@ -1,4 +1,4 @@
-package com.EKGroup.booking_system.dto;
+package com.ekgroup.booking_system.dto;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

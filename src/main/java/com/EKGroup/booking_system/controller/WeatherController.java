@@ -1,7 +1,7 @@
-package com.EKGroup.booking_system.controller;
+package com.ekgroup.booking_system.controller;
 
-import com.EKGroup.booking_system.dto.WeatherAvailabilityResponse;
-import com.EKGroup.booking_system.service.WeatherService;
+import com.ekgroup.booking_system.dto.WeatherAvailabilityResponse;
+import com.ekgroup.booking_system.service.WeatherService;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

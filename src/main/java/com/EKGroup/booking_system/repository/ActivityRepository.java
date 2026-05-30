@@ -1,6 +1,6 @@
-package com.EKGroup.booking_system.repository;
+package com.ekgroup.booking_system.repository;
 
-import com.EKGroup.booking_system.model.Activity;
+import com.ekgroup.booking_system.model.Activity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

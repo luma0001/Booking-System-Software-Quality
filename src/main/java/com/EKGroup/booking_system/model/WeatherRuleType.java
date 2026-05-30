@@ -1,4 +1,4 @@
-package com.EKGroup.booking_system.model;
+package com.ekgroup.booking_system.model;
 
 public enum WeatherRuleType {
     MAX_WIND_SPEED,
