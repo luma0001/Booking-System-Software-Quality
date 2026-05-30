@@ -41,10 +41,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
 
       - name: Set up Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@3a4f6e1af504cf6a31855fa899c6aa5355ba6c12 # v4.7.0
         with:
           distribution: temurin
           java-version: "21"
@@ -53,5 +55,34 @@ jobs:
       - name: Make Maven wrapper executable
         run: chmod +x mvnw
 
-      - name: Run unit and integration tests
-        run: ./mvnw test -Dtest='BookingValidatorTest,BookingServiceTest,WeatherClientIntegrationTest,BookingRepositoryIntegrationTest,BookingControllerIntegrationTest'
+      - name: Run all unit and integration tests with coverage check
+        run: ./mvnw -B verify
+
+      - name: Start Spring Boot Application
+        run: ./mvnw spring-boot:start -Dspring-boot.run.profiles=test
+
+      - name: Wait for Spring Boot Application to be ready
+        run: |
+          until curl -s http://localhost:8080/actuator/health | grep '"status":"UP"'; do
+            echo "Waiting for application to be ready..."
+            sleep 5
+          done
+
+      - name: Setup Node.js
+        uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4.2.0
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Node.js dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Install Playwright browsers
+        run: npx playwright@1.60.0 install --with-deps
+
+      - name: Run Playwright API tests
+        run: npm test
+
+      - name: Stop Spring Boot Application
+        if: always()
+        run: ./mvnw spring-boot:stop
