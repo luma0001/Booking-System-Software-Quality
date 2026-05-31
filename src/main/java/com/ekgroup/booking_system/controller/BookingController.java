@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -30,6 +31,11 @@ public class BookingController {
     @ResponseStatus(HttpStatus.CREATED)
     public BookingResponse createBooking(@Valid @RequestBody CreateBookingRequest request) {
         return bookingService.createBooking(request);
+    }
+
+    @GetMapping
+    public List<BookingResponse> getBookings() {
+        return bookingService.getBookings();
     }
 
     @GetMapping("/{bookingId}")

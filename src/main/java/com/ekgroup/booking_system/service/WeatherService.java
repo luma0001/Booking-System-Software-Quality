@@ -3,6 +3,7 @@ package com.ekgroup.booking_system.service;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.ekgroup.booking_system.client.weather.WeatherClient;
@@ -19,12 +20,24 @@ public class WeatherService {
     private final ActivityRepository activityRepository;
     private final WeatherClient weatherClient;
 
+    @Value("${weather.mock.enabled:false}")
+    private boolean mockWeather;
+
     public WeatherService(ActivityRepository activityRepository, WeatherClient weatherClient) {
         this.activityRepository = activityRepository;
         this.weatherClient = weatherClient;
     }
 
     public WeatherAvailabilityResponse checkAvailability(long activityId, LocalDate date, LocalTime time) {
+        if (mockWeather) {
+            return new WeatherAvailabilityResponse(
+                    activityId,
+                    date,
+                    time,
+                    true,
+                    "Mock weather is suitable"
+            );
+        }
         Activity activity = activityRepository.findById(activityId)
                 .filter(Activity::isActive)
                 .orElseThrow(() -> new NotFoundException("Activity not found: " + activityId));

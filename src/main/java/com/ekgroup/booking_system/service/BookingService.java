@@ -2,6 +2,7 @@ package com.ekgroup.booking_system.service;
 
 import java.time.Clock;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
@@ -39,6 +40,13 @@ public class BookingService {
         this.bookingValidator = bookingValidator;
         this.weatherService = weatherService;
         this.clock = clock;
+    }
+
+    public List<BookingResponse> getBookings() {
+        return bookingRepository.findAll()
+                .stream()
+                .map(this::toResponse)
+                .toList();
     }
 
     @Transactional
