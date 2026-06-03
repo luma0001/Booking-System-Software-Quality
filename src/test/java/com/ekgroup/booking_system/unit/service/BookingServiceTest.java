@@ -452,7 +452,7 @@ class BookingServiceTest {
                 "Quidditch Pitch",
                 10,
                 WeatherRuleType.MAX_WIND_SPEED,
-                12.0,
+                13.0,
                 true
         );
     }
