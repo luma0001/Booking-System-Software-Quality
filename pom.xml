@@ -28,9 +28,9 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
-		<sonar.organization>keaarimaaproject</sonar.organization>
+		<sonar.organization>luma0001</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-		<sonar.projectKey>KEAArimaaProject_Booking-System-Software-Quality</sonar.projectKey>
+		<sonar.projectKey>software-quality</sonar.projectKey>
 		<sonar.scanner.skipJreProvisioning>true</sonar.scanner.skipJreProvisioning>
 		<sonar.exclusions>
 			**/dto/**,
