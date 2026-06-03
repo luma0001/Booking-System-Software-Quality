@@ -48,7 +48,7 @@ class BookingControllerIntegrationTest {
                 "Harry Potter",
                 "harry@hogwarts.edu",
                 LocalDate.of(2026, 5, 7),
-                LocalTime.of(10, 30),
+                LocalTime.of(10, 00),
                 BookingStatus.ACTIVE,
                 LocalDateTime.of(2026, 5, 6, 12, 0),
                 null
