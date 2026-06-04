@@ -16,7 +16,7 @@ test.describe('API testing - Activities', () => {
         expect(body.length).toBeGreaterThan(0);
 
         expect(body[0]).toHaveProperty('id');
-        expect(body[0]).toHaveProperty('name');
+        expect(body[0]).toHaveProperty('money');
         expect(body[0]).toHaveProperty('description');
         expect(body[0]).toHaveProperty('location');
         expect(body[0]).toHaveProperty('maxParticipants');
